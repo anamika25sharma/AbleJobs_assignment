@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="../static/css/navigationbar.css">
     <ul>
         {% if 'username' in session %}
-        <li><a href="#"><strong>session['username']</strong></a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="#"><strong>{{session['username']}}</strong></a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        <li><a href="{{ url_for('form') }}">Add new job</a></li>
         {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>
         <li><a href="{{ url_for('login') }}">Login</a></li>
@@ -27,29 +28,27 @@
     <h3>All company Jobs</h3>
     <div class="dash">
         <h3 style="margin-left: 10px !important;">All company Jobs</h3>
+        {% for index in job_list %}
         <div class="list">
-            <div class="job-list">
-                <div class="job-list">
-                    <h4>Company Name:</h4>
-                    <span>sdxghk</span>
-                </div>
+            <div class="job-list">                
                 <div class="job-list">
                     <h4>Job-role:</h4>
-                    <span>sdxghk</span>
+                    <span>{{ index['jobRole'] }}</span>
                 </div>
                 <div class="job-list">
                     <h4>Job Description:</h4>
-                    <span>ydfrtudr</span>
+                    <span>{{ index['jobDescription'] }}</span>
                 </div>
                 <div class="job-list">
                     <h4>Place of Work:</h4>
-                    <span>ydfrtudr</span>
+                    <span>{{ index['placeOfWork'] }}</span>
                 </div>
                 <div class="job-list">
                     <h4>Phone number for Coordination:</h4>
-                    <span>ydfrtudr</span>
+                    <span>{{ index['phone'] }}</span>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </body>

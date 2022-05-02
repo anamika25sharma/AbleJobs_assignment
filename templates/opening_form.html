@@ -14,7 +14,7 @@
 <body>
     <ul>
         {% if 'username' in session %}
-        <li><a href="#"><strong>session['username']</strong></a></li>
+        <li><a href="#"><strong>{{session['username']}}</strong></a></li>
         <li><a href="#">Logout</a></li>
         {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -22,15 +22,15 @@
         {% endif %}
         <li><a href="{{ url_for('company_dash') }}">Dashboard</a></li>
         <li><a class="home" href="{{ url_for('form') }}">Add new job</a></li>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
     </ul>
     <br><br>
-    <h2 style="margin-top: 50px;">AbleJobs</h2>
+    <h2 style="margin-top: 50px;">AbleJobs</h2><br>
     <h2>Job Opening Form</h2>
     <h3>Fill the details related to the opening and Tap on <strong>Submit</strong></h3>
 
     <div class="container">
-        <form action="{{url_for('form')}}" method="POST">
+        <form action="{{url_for('requirement')}}" method="POST">
             <div class="jobroleform">
                 <label for="jobrole">Job Role*:</label>
                 <select id="jobrole" name="role">
@@ -56,7 +56,7 @@
             </div>
             <div class="Job-description">
                 <label for="phone">Phone Number for Coordination*:</label>
-                <input type="text" name="phone" class="jobroleform" placeholder="Your preferred Location.." required></textarea>
+                <input type="text" name="phone" class="jobroleform" placeholder="Your phone number..." required></textarea>
             </div>
             <div class="Job-description">
                 <input type="submit" value="Submit">

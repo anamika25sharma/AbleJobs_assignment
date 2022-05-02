@@ -15,8 +15,8 @@
 
     <ul>
         {% if 'username' in session %}
-        <li><a href="#"><strong>session['username']</strong></a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="#"><strong>{{session['username']}}</strong></a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>
         <li><a class="home" href="{{ url_for('login') }}">Login</a></li>
@@ -36,7 +36,7 @@
             <label><b>Password     
         </b>    
         </label>
-            <input type="Password" name="Pass" id="Pass" placeholder="Password">
+            <input type="Password" name="password" id="Pass" placeholder="Password">
             <br><br>
             <button id="log" type="submit">LogIn</button>
             <br>
