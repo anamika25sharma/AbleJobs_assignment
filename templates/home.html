@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbleJob</title>
+    <link rel="icon" type="image/png" href="static/css/img/icon.png" />
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/navigationbar.css">
+    <ul>
+        {% if 'username' in session %}
+        <li><a href="#"><strong>session['username']</strong></a></li>
+        <li><a href="#">Logout</a></li>
+        {% else %}
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+        <li><a href="{{ url_for('company_dash') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('form') }}">Add new job</a></li>
+        <li><a class="home" href="{{ url_for('index') }}">Home</a></li>
+    </ul>
+</head>
+
+<body>
+    <div class="container">
+        <div class="add-button">
+            <a href="{{ url_for('form') }}"><img src="../static/img/plus.png" alt="" style="width: 100px; height: 100px;"></a>
+            <p><b>Add Job Opening</b></p>
+        </div>
+    </div>
+</body>
+
+</html>

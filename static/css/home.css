@@ -1,0 +1,23 @@
+body {
+    background-image: url('https://www.insperity.com/wp-content/uploads/2015/12/the-secrets-to-a-remarkable-community-involvement-program-640x3021.png');
+    background-repeat: no-repeat;
+    margin: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.add-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 46%;
+}
+
+img:hover {
+    cursor: pointer;
+}

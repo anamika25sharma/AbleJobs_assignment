@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Opening Form</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/opening_form.css">
+    <link rel="icon" type="image/png" href="static/css/img/icon.png" />
+    <link rel="stylesheet" href="../static/css/navigationbar.css">
+
+</head>
+
+<body>
+    <ul>
+        {% if 'username' in session %}
+        <li><a href="#"><strong>session['username']</strong></a></li>
+        <li><a href="#">Logout</a></li>
+        {% else %}
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+        <li><a href="{{ url_for('company_dash') }}">Dashboard</a></li>
+        <li><a class="home" href="{{ url_for('form') }}">Add new job</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+    </ul>
+    <br><br>
+    <h2 style="margin-top: 50px;">AbleJobs</h2>
+    <h2>Job Opening Form</h2>
+    <h3>Fill the details related to the opening and Tap on <strong>Submit</strong></h3>
+
+    <div class="container">
+        <form action="{{url_for('form')}}" method="POST">
+            <div class="jobroleform">
+                <label for="jobrole">Job Role*:</label>
+                <select id="jobrole" name="role">
+                <option selected>Select Role</option>
+                <option value="Business Development Executive">Business Development Executive</option>
+                <option value="Customer Support Voice">Customer Support Voice</option>
+                <option value="Inside Sales">Inside Sales</option>
+                <option value="Field Sales">Field Sales</option>
+                <option value="Content Writing">Content Writing</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Community Management">Community Management</option>
+            </select>
+            </div>
+            <div class="Job-description">
+                <label for="jdescription">Job Description*:</label>
+                <p>We will populate a standard job description that you can edit</p>
+                <textarea name="jdescription" class="jobroleform" placeholder="Write the Job description..." required></textarea>
+            </div>
+            <div class="Job-description">
+                <label for="place">Place of Work(Address)*:</label>
+                <p>Your Phone number is extremely safe with us. It is only shared with one person in the team.</p>
+                <input type="text" name="place" class="jobroleform" placeholder="Your preferred Location.." required></textarea>
+            </div>
+            <div class="Job-description">
+                <label for="phone">Phone Number for Coordination*:</label>
+                <input type="text" name="phone" class="jobroleform" placeholder="Your preferred Location.." required></textarea>
+            </div>
+            <div class="Job-description">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1ef5b;
+    margin: 0px;
+    padding: 0;
+    background-image: url('https://www.insperity.com/wp-content/uploads/2015/12/the-secrets-to-a-remarkable-community-involvement-program-640x3021.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    border: 2px solid rgb(205, 135, 7);
+    background-color: rgb(254, 254, 141);
+    margin: 20px 50px;
+    padding: 10px 10px;
+    width: 700px;
+}
+
+input[type=text],
+input[type=password] {
+    margin: 5px 5px;
+    display: flex;
+    width: 90%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+}
+
+.registerbtn {
+    background-color: #ffc422;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-size: large;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+a {
+    color: rgb(255, 165, 30);
+}
+
+.signin {
+    padding: 16px 20px;
+    background-color: #f1ef5b;
+    text-align: center;
+}

@@ -1,0 +1,26 @@
+ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 5px;
+    overflow: hidden;
+    background-color: rgb(144, 107, 7);
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: rgb(255, 255, 252);
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.home {
+    background-color: rgba(8, 255, 25, 0.778);
+}

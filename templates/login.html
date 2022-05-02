@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="icon" type="image/png" href="../static/css/img/icon.png" />
+    <link rel="stylesheet" href="../static/css/navigationbar.css">
+
+</head>
+
+<body>
+
+    <ul>
+        {% if 'username' in session %}
+        <li><a href="#"><strong>session['username']</strong></a></li>
+        <li><a href="#">Logout</a></li>
+        {% else %}
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <li><a class="home" href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+        <li><a href="{{ url_for('company_dash') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('form') }}">Add new job</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+    </ul>
+    <h2>AbleJobs</h2>
+    <div class="login">
+        <form id="login" method="POST" action="{{ url_for('login') }}">
+            <label><b>Username      
+        </b>    
+        </label>
+            <input type="text" name="Uname" id="Uname" placeholder="Username">
+            <br><br>
+            <label><b>Password     
+        </b>    
+        </label>
+            <input type="Password" name="Pass" id="Pass" placeholder="Password">
+            <br><br>
+            <button id="log" type="submit">LogIn</button>
+            <br>
+            <p class="btn"> <a href="{{ url_for('register') }}">Not Registered? Create an account</a></p>
+        </form>
+    </div>
+</body>
+
+</html>

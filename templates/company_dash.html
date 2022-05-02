@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN Dashboard</title>
+    <link rel="icon" type="image/png" href="../static/css/img/icon.png" />
+    <link rel="stylesheet" href="../static/css/admin_dash.css">
+    <link rel="stylesheet" href="../static/css/navigationbar.css">
+    <ul>
+        {% if 'username' in session %}
+        <li><a href="#"><strong>session['username']</strong></a></li>
+        <li><a href="#">Logout</a></li>
+        {% else %}
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+        <li><a class="home" href="{{ url_for('company_dash') }}">Dashboard</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+    </ul>
+</head>
+
+<body>
+    <br>
+    <h3>All company Jobs</h3>
+    <div class="dash">
+        <h3 style="margin-left: 10px !important;">All company Jobs</h3>
+        <div class="list">
+            <div class="job-list">
+                <div class="job-list">
+                    <h4>Company Name:</h4>
+                    <span>sdxghk</span>
+                </div>
+                <div class="job-list">
+                    <h4>Job-role:</h4>
+                    <span>sdxghk</span>
+                </div>
+                <div class="job-list">
+                    <h4>Job Description:</h4>
+                    <span>ydfrtudr</span>
+                </div>
+                <div class="job-list">
+                    <h4>Place of Work:</h4>
+                    <span>ydfrtudr</span>
+                </div>
+                <div class="job-list">
+                    <h4>Phone number for Coordination:</h4>
+                    <span>ydfrtudr</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
