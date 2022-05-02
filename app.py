@@ -4,7 +4,7 @@ from pymongo import ALL
 app = Flask(__name__)
 
 app.config['MONGODB_NAME'] = 'assignment'
-app.config['MONGO_URI'] = "mongodb+srv://anamika:Anamika25@cluster0.235dw.mongodb.net/assignment?ssl=true&ssl_cert_reqs=CERT_NONE"
+app.config['MONGO_URI'] = "mongodb url"
 app.config['SECRET_KEY'] = "anamikasharma"
 
 mongo = PyMongo(app)
