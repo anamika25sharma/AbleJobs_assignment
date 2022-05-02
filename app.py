@@ -4,7 +4,11 @@ from pymongo import *
 app = Flask(__name__)
 
 app.config['MONGODB_NAME'] = 'assignment'
+<<<<<<< HEAD
 app.config['MONGO_URI'] = 'mongodb url'
+=======
+app.config['MONGO_URI'] = "mongodb url"
+>>>>>>> 84fb251fa2a58b53397eacc88aa0642ef5bb40c5
 app.config['SECRET_KEY'] = "anamikasharma"
 
 mongo = PyMongo(app)
@@ -95,5 +99,4 @@ def adminDashboard():
 
 
 if __name__ == '__main__':
-    # app.secret_key = "hello"
     app.run(debug=True)
